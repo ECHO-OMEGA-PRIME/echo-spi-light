@@ -1,0 +1,35 @@
+name = "echo-spi-light"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "echo-spi-light"
+database_id = "f93a594a-2f6e-4e8b-880c-c5c58e91d9a3"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "56b8aea007744997a41e19bea1016384"
+
+# SPI Core brain
+[[services]]
+binding = "SPI_BRAIN"
+service = "echo-spi-sovereign"
+
+# Direct ECHO access for fast queries
+[[services]]
+binding = "ECHO_CHAT"
+service = "echo-chat"
+
+[[services]]
+binding = "ENGINE_RUNTIME"
+service = "echo-engine-runtime"
+
+[[services]]
+binding = "SHARED_BRAIN"
+service = "echo-shared-brain"
+
+# Cron: daily wisdom, weekly reflection
+[triggers]
+crons = ["0 13 * * *", "0 15 * * SUN"]
