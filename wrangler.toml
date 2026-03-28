@@ -33,3 +33,7 @@ service = "echo-shared-brain"
 # Cron: daily wisdom, weekly reflection
 [triggers]
 crons = ["0 13 * * *", "0 15 * * SUN"]
+
+[[analytics_engine_datasets]]
+binding = "ANALYTICS"
+dataset = "echo_metrics"
