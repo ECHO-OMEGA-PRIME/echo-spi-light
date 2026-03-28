@@ -1297,6 +1297,8 @@ export default {
     try {
       // Route handling
       switch (path) {
+        case '/':
+          return jsonResponse({ service: 'echo-spi-light', status: 'operational' });
         case '/health':
           return handleHealth(env);
 
